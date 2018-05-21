@@ -1,0 +1,19 @@
+{
+  "ids": {
+    "User": 3,
+    "AccessToken": 1,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1
+  },
+  "models": {
+    "User": {
+      "1": "{\"username\":\"customer\",\"password\":\"$2a$10$eoGFSeyDY2oqdYAqCEi9XOJSg3AzoITVE0vPQYHTdSprmf2LIEjDS\",\"email\":\"customer@gmail.com\",\"id\":1}",
+      "2": "{\"username\":\"presenter\",\"password\":\"$2a$10$3yvY.bwtz1fajZKZtKsuSuoadgRHn3wncF09itsCEoSKVRhoV3Ml6\",\"email\":\"presenter@gmail.com\",\"id\":2}"
+    },
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {}
+  }
+}
