@@ -1,0 +1,28 @@
+<ng-template #modal>
+  <div class="modal-content tech-selected-modal">
+    <div class="modal-header text-center">
+      <h4 class="modal-title">Add text message</h4>
+      <button (click)="closeModal()" mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #f="ngForm" (submit)="_onSubmit(f)" id="f">
+        <mat-form-field class="full-width">
+          <input matInput [matDatepicker]="picker" placeholder="Expires" name="expires" ngModel #expires="ngModel"
+                 required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <textarea matInput name="content" ngModel #content="ngModel" required></textarea>
+        </mat-form-field>
+
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button mat-raised-button color="primary" type="submit" form="f">Ok</button>
+      <button mat-raised-button color="warn" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</ng-template>

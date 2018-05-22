@@ -11,9 +11,16 @@
       "type": "number",
       "required": true
     },
-    "hiden": {
+    "hidden": {
       "type": "boolean",
       "default": false
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "expires": {
+      "type": "date"
     }
   },
   "mixins": {

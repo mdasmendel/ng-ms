@@ -11,7 +11,7 @@
     "posttest": "npm run lint && nsp check",
     "ts:build": "tsc",
     "ts:watch": "tsc --watch",
-    "build:sdk": "npm run ts:build && ./node_modules/.bin/lb-sdk server/server.js ./../messages-app/src/app/shared/services/sdk -l angular2 -d ng2web -i disabled"
+    "build:sdk": "npm run ts:build && lb-sdk server/server.js ./../messages-app/src/app/shared/services/sdk -l angular2 -d ng2web -i disabled"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -25,6 +25,8 @@
     "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {
+    "@mean-expert/loopback-sdk-builder": "^2.2.7",
+    "@mean-expert/model": "^1.0.9",
     "@types/express": "^4.11.1",
     "@types/node": "^10.1.2",
     "eslint": "^3.17.1",

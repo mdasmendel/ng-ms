@@ -1,0 +1,29 @@
+<div class="container p-5">
+  <div class="card">
+    <div class="card-header">
+      Messages
+    </div>
+    <div class="card-body">
+      <div *ngFor="let message of messages" [ngSwitch]="message.type">
+        <app-file [fileLink]="message.content" *ngSwitchCase="1" (onHide)="_onHide(message)"
+                  [hidden]="isHidden(message)" [readOnly]="readOnly"></app-file>
+        <app-text *ngSwitchDefault [data]="message.content" (onHide)="_onHide(message)" [hidden]="isHidden(message)"
+                  [readOnly]="readOnly"></app-text>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="!readOnly">
+  <button mat-mini-fab class="img-btn" (click)="uploadFile(fileInput)">
+    <mat-icon aria-label="add message">image</mat-icon>
+  </button>
+  <button mat-mini-fab class="text-btn" (click)="addTextMsg()">
+    <mat-icon aria-label="add message">comment</mat-icon>
+  </button>
+</div>
+<span style="width: 0px; height:0px;border:none;margin:0; padding:0" [hidden]="true">
+    <input type="file" accept="image/png, image/gif, image/jpeg, image/jpg, application/pdf" #fileInput ng2FileSelect
+           [uploader]="fileForUpload"/>
+</span>

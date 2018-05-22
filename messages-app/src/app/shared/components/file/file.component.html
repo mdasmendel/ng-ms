@@ -1,0 +1,28 @@
+
+<mat-card class="app-card" >
+
+  <mat-card-content>
+    <div class="file-viewer-img">
+      <div class="actions-file">
+        <div class="zoom" (click)="openModal(showFileModal)">
+          <mat-icon aria-hidden="true">search</mat-icon>
+        </div>
+        <div class="download">
+          <a [href]="fileLink" download>
+            <mat-icon aria-hidden="true">cloud_download</mat-icon>
+          </a>
+        </div>
+      </div>
+
+      <img [src]="fileLink" alt="" class="img-thumbnail rounded">
+
+    </div>
+  </mat-card-content>
+  <mat-card-actions *ngIf="!readOnly">
+    <button mat-raised-button color="primary" class="pull-right" (click)="hide()"> Hide
+    </button>
+  </mat-card-actions>
+</mat-card>
+<ng-template #showFileModal>
+  <img [src]="fileLink" alt="">
+</ng-template>
